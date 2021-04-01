@@ -28,7 +28,7 @@ func removeKdigits(num string, k int) string {
 		tmpByteArr = append(tmpByteArr, tmpData)
 	}
 
-	tmpByteArr = tmpByteArr[:len(tmpByteArr) - k]
+	tmpByteArr = tmpByteArr[:len(tmpByteArr) - k] //如果经过筛选之后，这最终是个单调递增的字符串的话，那么就把最后几个字符删掉就好了
 
 	result := strings.TrimLeft(string(tmpByteArr), "0")
 	if result == ""{
