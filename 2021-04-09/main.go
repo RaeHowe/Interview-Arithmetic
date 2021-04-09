@@ -23,7 +23,7 @@ func QuickSort(tmpSlice []int, length, start, end int)  {
 		return
 	}
 
-	var index = partition(tmpSlice, length, start, end)
+	var index = partition(tmpSlice, length, start, end) //查找分界位置
 
 	if start < index{
 		QuickSort(tmpSlice, length, start, index - 1)
@@ -42,11 +42,12 @@ func partition(tmpSlice []int, length, start, end int) int {
 	var index = start
 	var small = start - 1
 
+	//排序数组子部分的数组元素
 	for ;index < end; index++{
 		if tmpSlice[index] < tmpSlice[end]{
 			small++
 			if small != index{
-				tmpSlice[small], tmpSlice[index] = tmpSlice[index], tmpSlice[small]
+				tmpSlice[small], tmpSlice[index] = tmpSlice[index], tmpSlice[small] //
 			}
 		}
 	}
